@@ -1,7 +1,7 @@
 {
-  "name": "minimal-repro",
+  "name": "leetcode-electron",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Leetcode Electron Wrapper",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -14,9 +14,10 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "udontur",
+  "license": "MIT",
   "devDependencies": {
+    "@electron/packager": "^19.0.1",
     "electron": "^39.1.0"
   }
 }

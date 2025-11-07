@@ -4,12 +4,13 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    // webPreferences: {
-    //   preload: path.join(__dirname, 'preload.js')
-    // }
+    autoHideMenuBar: true,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
   })
+  // Put the URL here
   mainWindow.loadURL("https://leetcode.com")
-  mainWindow.setMenu(null);
 }
 app.whenReady().then(() => {
   createWindow()
