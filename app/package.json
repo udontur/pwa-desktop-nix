@@ -1,5 +1,5 @@
 {
-  "name": "pwa-electron",
+  "name": "pwa-desktop-nix",
   "version": "1.0",
   "main": "src/main.js",
   "dependencies": {

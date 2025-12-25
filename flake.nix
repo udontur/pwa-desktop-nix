@@ -1,5 +1,5 @@
 {
-  description = "github:udontur/umpire Nix flake";
+  description = "PWA Desktop Nix";
   inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
 
   outputs =
@@ -39,21 +39,19 @@
             pname = name;
             version = "1.0";
             src = ./app;
-            npmDepsHash = "sha256-g9hGNS/D4rN2HSrFEdeKZ1+94ZOPFSv/vM7lJsK35Ac=";
 
+            npmDepsHash = "sha256-3tIHllTGByjFaRW3piJJtkuuzRhAnJ+P76OEJ9HbCDM=";
             dontNpmBuild = true;
-
             env = {
               ELECTRON_SKIP_BINARY_DOWNLOAD = 1;
             };
 
             postInstall = ''
               makeWrapper ${pkgs.electron}/bin/electron $out/bin/${pname} \
-                --add-flags $out/lib/node_modules/pwa-electron/src/main.js \
+                --add-flags $out/lib/node_modules/pwa-desktop-nix/src/main.js \
                 --set PWA_URL "${configJson.url}"
-
               mkdir -p $out/share/applications
-              cp $out/lib/node_modules/pwa-electron/assets/icon.svg $out/share/applications/icon.svg
+              cp $out/lib/node_modules/pwa-desktop-nix/assets/icon.svg $out/share/applications/icon.svg
               echo "${desktopFile}" > $out/share/applications/${pname}.desktop
             '';
 
