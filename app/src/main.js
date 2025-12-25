@@ -9,7 +9,6 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  console.log(pwaURL)
   mainWindow.loadURL(pwaURL)
 }
 app.whenReady().then(() => {
