@@ -2,20 +2,16 @@
 An intuitive Progressive Web App (PWA) Electron wrapper template that turns your PWA into a usable desktop application in Nix with just a URL!
 
 ## Using the template
-### Customizing
-It's dead simple! Simply change the content of [config.json](./config.json) and you're done!
-
-### Testing
-You can test it by building and running it. 
-```
-nix run .
-```
+It's dead simple! Simply:
+1. Click "Use this template" on the top left corner.
+2. Edit the content of [config.json](./config.json).
+3. You're all set!
 
 ## Installation
 You can install your PWA application via Nix Flakes. 
   1. Add the url to your <code>flake.nix</code> input:
   <pre lang="nix">inputs = {
-  APP_NAME.url = "github:udontur/REPONAME";
+  APP_NAME.url = "github:udontur/REPO_NAME";
   # ...
 };</pre>
   
