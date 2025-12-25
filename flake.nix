@@ -17,9 +17,9 @@
       packages = forAllSystems (
         system:
         let
-          # vvv CHANGE THE APPLICATION NAME HERE
-          name = "APP_NAME";
-          # ^^^ CHANGE THE APPLICATION NAME HERE
+          configData = builtins.readFile ./config.json;
+          configJson=builtins.fromJSON (configData);
+          name = configJson.name;
           pkgs = import nixpkgs {
             inherit system;
           };
@@ -30,15 +30,15 @@
             Exec=$out/bin/${name}
             Icon=./icon.svg
             Terminal=false
-            Keywords=leetcode;code;
-            Comment=Turn PWA into desktop Nix
+            Keywords=${configJson.keywords}
+            Comment=${configJson.description}
           '';
         in
         {
           default = pkgs.buildNpmPackage rec {
             pname = name;
             version = "1.0";
-            src = self;
+            src = ./app;
             npmDepsHash = "sha256-g9hGNS/D4rN2HSrFEdeKZ1+94ZOPFSv/vM7lJsK35Ac=";
 
             dontNpmBuild = true;
@@ -49,10 +49,11 @@
 
             postInstall = ''
               makeWrapper ${pkgs.electron}/bin/electron $out/bin/${pname} \
-                --add-flags $out/lib/node_modules/pwa-electron/src/main.js
+                --add-flags $out/lib/node_modules/pwa-electron/src/main.js \
+                --set PWA_URL "${configJson.url}"
 
               mkdir -p $out/share/applications
-              cp $out/lib/node_modules/pwa-electron/src/assets/icon.svg $out/share/applications/icon.svg
+              cp $out/lib/node_modules/pwa-electron/assets/icon.svg $out/share/applications/icon.svg
               echo "${desktopFile}" > $out/share/applications/${pname}.desktop
             '';
 

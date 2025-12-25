@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
+const pwaURL = process.env.PWA_URL
 function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -8,8 +9,8 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  // Put the URL here
-  mainWindow.loadURL("https://leetcode.com")
+  console.log(pwaURL)
+  mainWindow.loadURL(pwaURL)
 }
 app.whenReady().then(() => {
   createWindow()
