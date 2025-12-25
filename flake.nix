@@ -50,8 +50,7 @@
                 --add-flags $out/lib/node_modules/pwa-electron/src/main.js
 
               mkdir -p $out/share/applications
-              touch $out/share/applications/${pname}.desktop
-              echo ${desktopFile} > $out/share/applications/${pname}.desktop
+              echo "${desktopFile}" > $out/share/applications/${pname}.desktop
             '';
 
             meta = {
