@@ -1,16 +1,7 @@
 {
   "name": "pwa-electron",
   "version": "1.0",
-  "description": "Template that turns website into desktop apps with just a url (Nix)",
   "main": "src/main.js",
-  "repository": "https://github.com/udontur/pwa-electron",
-  "keywords": [
-    "pwa",
-    "electron",
-    "desktop"
-  ],
-  "author": "udontur",
-  "license": "MIT",
   "dependencies": {
     "electron": "^39.2.7"
   }
