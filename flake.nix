@@ -28,8 +28,10 @@
             Type=Application
             Name=${name}
             Exec=$out/bin/${name}
-            Icon=./src/icon.svg
+            Icon=./icon.svg
             Terminal=false
+            Keywords=leetcode;code;
+            Comment=Turn PWA into desktop Nix
           '';
         in
         {
@@ -50,6 +52,7 @@
                 --add-flags $out/lib/node_modules/pwa-electron/src/main.js
 
               mkdir -p $out/share/applications
+              cp $out/lib/node_modules/pwa-electron/src/assets/icon.svg $out/share/applications/icon.svg
               echo "${desktopFile}" > $out/share/applications/${pname}.desktop
             '';
 

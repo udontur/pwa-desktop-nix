@@ -20,3 +20,7 @@ electron .
 - [ ] Persistance data (local storage)
 - [ ] Make it change easily 
 - [ ] Make it appear on desktop
+- [ ] Icon template
+- [ ] Write down template what need to do
+- [ ] Add keywords and description
+- [ ] make it look good
