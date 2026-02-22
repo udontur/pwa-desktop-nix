@@ -3,9 +3,9 @@ An intuitive Progressive Web App (PWA) Electron wrapper template that turns your
 
 ## Using the template
 It's dead simple! Simply:
-1. Click "Use this template" on the top left corner.
+1. Click _"Use this template"_ on the top left corner.
 2. Edit the content of [config.json](./config.json).
-3. You're all set!
+3. Add it to flake.nix, rebuild your system, and you're all set!
 
 ## Installation
 You can install your PWA application via Nix Flakes. 
