@@ -1,4 +1,4 @@
-# PWA Desktop Nix
+# 📋 PWA Desktop Nix
 An intuitive Progressive Web App (PWA) Electron wrapper template that turns any website into a usable desktop application in Nix with just a URL!
 
 ## Using the template
